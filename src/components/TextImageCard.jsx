@@ -1,16 +1,30 @@
 import Image from 'next/image'
 import React from 'react'
 import Button from './Button'
+import { motion } from 'framer-motion'
 
 
 const TextImageCard = ({ head, title, text, imageUri, buttonText, direction }) => {
   return (
     <>
-        <div id="container" className='md:flex items-center justify-between gap-3 p-6 mx-auto max-w-5xl'>
+        <motion.div 
+            initial={{
+                x: -100,
+                opacity: 0
+            }} 
+            whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: { duration: 0.5, delay: 0.2 }
+            }}    
+            id="container" className='md:flex items-center justify-between gap-3 p-6 mx-auto max-w-5xl'
+        >
             
             {
                 direction === "left" ? (
-                    <div id="left" className='mr-7'>
+                    <motion.div
+                        id="left" className='mr-7'
+                    >
                         <div className='bg-gray-100 p-7 rounded-2xl'>
                             <Image 
                                 src={imageUri}
@@ -20,7 +34,7 @@ const TextImageCard = ({ head, title, text, imageUri, buttonText, direction }) =
                                 className=''
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 ) : ""
             }
             <div id="left" className={`flex flex-col ${direction === "right" ? "items-start" : "items-end"}`}>
@@ -57,7 +71,7 @@ const TextImageCard = ({ head, title, text, imageUri, buttonText, direction }) =
                     </div>
                 ) : ""
             }
-        </div>
+        </motion.div>
     </>
   )
 }

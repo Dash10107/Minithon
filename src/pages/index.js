@@ -8,18 +8,35 @@ import TextImageCard from '@/components/TextImageCard'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
+import { RxCross2 } from "react-icons/rx";
+
+import localFont from "next/font/local"
+
+// Load the fonts
+const AktivGroteskBold = localFont({ 
+    src: '../pages/fonts/AktivGrotesk-Bold.ttf',
+    variable: '--font-aktiv-bold' 
+});
+
+const AktivGroteskRegular = localFont({ 
+    src: '../pages/fonts/AktivGrotesk-Regular.ttf',
+    variable: '--font-aktiv-bold' 
+});
+
 
 
 const index = () => {
 
   const text = "We won!✨🎉 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis nemo possimus omnis similique. At dolores rerum molestias necessitatibus similique maiores ratione, impedit corrupti aperiam. Voluptas eius repudiandae illum nostrum sed. "
 
+
   return (
     <div className='overflow-hidden'>
+
       <Header 
         text1={"The winner for Minithon is"} 
         text2={"Zucky the Lizard"} 
-        linktext={"profiles"}
+        linktext={"switch theme"}
         tabs={[
           {name: "Home", link: "/"},
           {name: "About", link: "/about"},
