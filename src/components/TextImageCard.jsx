@@ -4,7 +4,7 @@ import Button from './Button'
 import { motion } from 'framer-motion'
 
 
-const TextImageCard = ({ head, title, text, imageUri, buttonText, direction, dynamicGrid }) => {
+const TextImageCard = ({ head, title, text, imageUri, buttonText, direction, dynamicGrid, setNeonDark, neonDark }) => {
   return (
     <>
         <motion.div 
@@ -17,7 +17,7 @@ const TextImageCard = ({ head, title, text, imageUri, buttonText, direction, dyn
                 opacity: 1,
                 transition: { duration: 0.5, delay: 0.2 }
             }}    
-            id="container" className='md:flex items-center justify-between gap-3 p-6 mx-auto max-w-5xl'
+            id="container" className={` md:flex items-center justify-between gap-3 p-6 mx-auto max-w-5xl ${neonDark && "text-white"} `}
         >
             
             {

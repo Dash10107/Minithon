@@ -20,7 +20,7 @@ import { TbMenu } from "react-icons/tb";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const Header = ({ text1, text2, linktext, tabs }) => {
+const Header = ({ text1, text2, linktext, tabs, setNeonDark, neonDark }) => {
 
     const [showAnnouncement, setShowAnnouncement] = useState(true);
     const [showModal, setShowModal] = useState(false);
@@ -31,7 +31,7 @@ const Header = ({ text1, text2, linktext, tabs }) => {
         <div id="contianer">
             {
                 showAnnouncement && (
-                    <motion.div id="announcement-banner" className='bg-blacks p-2 flex justify-between items-center gap-1'
+                    <motion.div id="announcement-banner" className={`bg-blacks p-2 flex justify-between items-center gap-1`}
                         initial={{
                             y:-100
                         }}
@@ -51,15 +51,15 @@ const Header = ({ text1, text2, linktext, tabs }) => {
                             <p className='font-bold text-[#d4d4d4] text-xs md:text-base'>{text2}</p>
                         </div>
                         <div id="external-link" className='text-[#8f8f8f]'>
-                            <a href="https://www.google.com" target="_blank" className='underline text-xs md:text-base'>
+                            <p onClick={ () => setNeonDark(!neonDark) } className='underline text-xs md:text-base'>
                                 {linktext}
-                            </a>
+                            </p>
                         </div>
                     </motion.div>
                 )
             }
 
-            <motion.div id="navigation-bar" className='p-4 flex justify-between items-center'
+            <motion.div id="navigation-bar" className={` ${neonDark && "text-white"} p-4 flex justify-between items-center`}
                 initial={{ y: 100, opacity: 0 }}  // Start below and invisible
                 animate={{ y: 0, opacity: 1 }}    // Move to original position and become visible
                 transition={{ duration: 0.6, ease: "easeOut" }}  // Customize the duration and easing

@@ -1,24 +1,28 @@
 import Header from '@/components/Header'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import banner1 from "../assets/banner1.svg"
 import banner2 from "../assets/banner2.svg"
 import banner3 from "../assets/banner3.svg"
 import HeroTexts from '@/components/HeroTexts'
 import TextImageCard from '@/components/TextImageCard'
-
+import ThemeContext from '@/context/ThemeContext'
 
 const about = () => {
 
   const text = " We're two best friends who share a love for coding and building cool stuff. With a few years of hands-on experience, we’ve worked as freelance developers and interned at places like Innovation Hacks AI and Vital Solutions, picking up skills in both frontend and backend development. Our journey into the world of tech started back in high school, and we’ve been hooked ever since. Whether it’s solving problems or creating new projects, we’re always up for the challenge and excited to keep learning and growing together "
 
+  const { setNeonDark, neonDark } = useContext(ThemeContext)
+
   return (
     <>
-        <div id="container">
+        <div id="container" className={` ${neonDark && "bg-[#0d0d0d] text-white"} `}>
             <Header 
                 text1={"The winner for Minithon is"} 
                 text2={"Zucky the Lizard"} 
                 linktext={"profiles"}
+                setNeonDark={setNeonDark}
+                neonDark={neonDark}
                 tabs={[
                   {name: "Home", link: "/", underline: false},
                   {name: "About", link: "/about", underline: true},
