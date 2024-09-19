@@ -4,7 +4,7 @@ import Button from './Button'
 import { motion } from 'framer-motion'
 
 
-const TextImageCard = ({ head, title, text, imageUri, buttonText, direction }) => {
+const TextImageCard = ({ head, title, text, imageUri, buttonText, direction, dynamicGrid }) => {
   return (
     <>
         <motion.div 
@@ -59,15 +59,36 @@ const TextImageCard = ({ head, title, text, imageUri, buttonText, direction }) =
             {
                 direction === "right" ? (
                     <div id="right">
-                        <div className='bg-gray-100 p-7 rounded-2xl'>
-                            <Image 
-                                src={imageUri}
-                                alt={title}
-                                width={1100}
-                                height={1100}
-                                className=''
-                            />
-                        </div>
+                       {
+                        dynamicGrid ? (
+                            <div className='pt-20'>
+                                <Image 
+                                    src={"https://debugcodes.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofilepic.989d3af8.jpg&w=3840&q=75"}
+                                    alt={title}
+                                    width={1100}
+                                    height={1100}
+                                    className='rounded-xl relative hover:scale-150 hover:z-20 transition ease-in-out duration-300'
+                                />
+                                <Image 
+                                    src={"https://www.dash10107.me/avatar.jpg"}
+                                    alt={title}
+                                    width={1100}
+                                    height={1100}
+                                    className='rounded-xl z-10 mt-2 md:relative md:-top-56 md:-left-40 hover:scale-150 hover:z-20 transition ease-in-out duration-300'
+                                />
+                            </div>
+                        ) : (
+                            <div className='bg-gray-100 p-7 rounded-2xl'>
+                                <Image 
+                                    src={imageUri}
+                                    alt={title}
+                                    width={1100}
+                                    height={1100}
+                                    className=''
+                                />
+                            </div>
+                        )
+                       }
                     </div>
                 ) : ""
             }

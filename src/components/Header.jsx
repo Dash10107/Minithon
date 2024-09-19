@@ -66,9 +66,13 @@ const Header = ({ text1, text2, linktext, tabs }) => {
             >
                 <div id="logo" className='flex items-center gap-4'>
                     <div className='md:hidden' onClick={() => setShowModal(!showModal)}>
-                        <TbMenu size={20}/>
+                        <TbMenu size={20} />
                     </div>
-                    <p className={`text-4xl font-bold ${AktivGroteskBold.className}`}>ZUCK</p>
+                    <p className={`text-4xl font-bold ${AktivGroteskBold.className}`} >
+                        <Link href={"/"}>
+                            ZUCK
+                        </Link>
+                    </p>
                 </div>
                 <div id="tabs" className='md:flex gap-9 hidden'>
                     {
@@ -79,6 +83,7 @@ const Header = ({ text1, text2, linktext, tabs }) => {
                         ))
                     }
                 </div>
+
                 <div id="icons" className='flex gap-2'>
                     <CiSearch size={25}/>
                     <CiUser size={25}/>
@@ -86,9 +91,9 @@ const Header = ({ text1, text2, linktext, tabs }) => {
             </motion.div>
             {
                 showModal && (
-                    <motion.div id="modal" className=' border w-[80%] absolute bg-white md:hidden p-2 ml-2 rounded-lg'
-                        initial={{ x: -100, opacity: 0 }}  // Start below and invisible
-                        animate={{ x: 0, opacity: 1 }}    // Move to original position and
+                    <motion.div id="modal" className=' z-30 border w-full absolute bg-white md:hidden p-2 mt-2  rounded-lg'
+                        initial={{ y: -100, opacity: 0 }}  // Start below and invisible
+                        animate={{ y: 0, opacity: 1 }}    // Move to original position and
                         transition={{ duration: 0.6, ease: "easeOut" }}  // Customize
                     >
                         <div id="icon" className='absolute right-1' onClick={() => setShowModal(!showModal)}>

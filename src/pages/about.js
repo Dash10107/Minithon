@@ -1,8 +1,17 @@
 import Header from '@/components/Header'
-import TriImageGrid from '@/components/TriImageGrid'
 import React from 'react'
 
+import banner1 from "../assets/banner1.svg"
+import banner2 from "../assets/banner2.svg"
+import banner3 from "../assets/banner3.svg"
+import HeroTexts from '@/components/HeroTexts'
+import TextImageCard from '@/components/TextImageCard'
+
+
 const about = () => {
+
+  const text = " We're two best friends who share a love for coding and building cool stuff. With a few years of hands-on experience, we’ve worked as freelance developers and interned at places like Innovation Hacks AI and Vital Solutions, picking up skills in both frontend and backend development. Our journey into the world of tech started back in high school, and we’ve been hooked ever since. Whether it’s solving problems or creating new projects, we’re always up for the challenge and excited to keep learning and growing together "
+
   return (
     <>
         <div id="container">
@@ -17,10 +26,23 @@ const about = () => {
                 ]}  
             />
 
-            <TriImageGrid 
-                text={"Most Reliable developer Duo when it comes to efficiency"}
-                image={['https://media.istockphoto.com/id/863497498/photo/i-need-everyone-to-give-me-their-best-ideas.jpg?s=612x612&w=0&k=20&c=NtuxU9998bWMDsZN8QB0Ox-5AlpQ7NoifOhbuXQWcpo=', 'https://www.betterup.com/hubfs/Happy-work-team-cheering-and-celebrating-at-meeting-team-collaboration.jpg', 'https://media.istockphoto.com/id/1346944001/photo/close-up-of-co-workers-stacking-their-hands-together.jpg?s=612x612&w=0&k=20&c=lidJcFUSR3rkMt4B0yoNwH55lz3sth9o2280keqBXGE=']}
+            <HeroTexts 
+              heading={"We Are Zucky The Lizard"}
+              para={""}
             />
+
+            <div id="textimgcard" className='flex justify-center items-center mx-auto'>
+              <TextImageCard 
+                head={"Our Duo"}
+                title={"#the_best"}
+                text={text}
+                imageUri={"https://media.sonos.com/images/znqtjj88/production/34735de0ce8535cb9fe2af5a78db26dcb4aaa9f1-2500x2500.png?w=750&q=100&fit=clip&auto=format"}
+                buttonText={""}
+                direction={"right"}
+                dynamicGrid={true}
+              />
+            </div>
+            
         </div>
     </>
   )
