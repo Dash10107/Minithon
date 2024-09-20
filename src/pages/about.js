@@ -24,10 +24,12 @@ const about = () => {
                 setNeonDark={setNeonDark}
                 neonDark={neonDark}
                 tabs={[
-                  {name: "Home", link: "/", underline: false},
-                  {name: "About", link: "/about", underline: true},
-                  {name: "Contact", link: "/contact", underline: false}
-                ]}  
+                  { name: "Home", link: "/" },
+                  { name: "About", link: "/about", underline: true },
+                  { name: "Events", link: "/Events/event" },
+                  { name: "Profile", link: "/Auth/profile" },
+                  { name: "Calendar", link: "/Calendar/calendar" },
+                ]} 
             />
 
             <HeroTexts 

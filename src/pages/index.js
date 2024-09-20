@@ -17,6 +17,9 @@ import localFont from "next/font/local"
 import banner1 from "../assets/banner1.svg"
 import banner2 from "../assets/banner2.svg"
 import banner3 from "../assets/banner3.svg"
+import volunteer from "../assets/volunteer.svg"
+import vol1 from "../assets/vol1.jpg"
+import vol2 from "../assets/vol2.jpg"
 import ThemeContext from '@/context/ThemeContext'
 
 // Load the fonts
@@ -45,7 +48,7 @@ const index = () => {
 
   const { setNeonDark, neonDark } = useContext(ThemeContext)
 
-  const text = "We won!✨🎉 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis nemo possimus omnis similique. At dolores rerum molestias necessitatibus similique maiores ratione, impedit corrupti aperiam. Voluptas eius repudiandae illum nostrum sed. "
+  const text = "At Voluntrix, we believe in the power of giving back. Our platform bridges the gap between volunteers and local opportunities, creating a space where individuals can contribute to meaningful causes. Whether you're tech-savvy or just starting out, our user-friendly interface makes it easy to find events, track hours, and see the positive impact you're making in your community. From environmental cleanups to helping the elderly, your contribution matters—and we’re here to make it seamless."
 
 
   return (
@@ -59,41 +62,47 @@ const index = () => {
         setNeonDark={setNeonDark}
         neonDark={neonDark}
         tabs={[
-          {name: "Home", link: "/"},
-          {name: "About", link: "/about"},
-          {name: "Contact", link: "/contact"}
+          { name: "Home", link: "/" , underline: true},
+          { name: "About", link: "/about" },
+          { name: "Events", link: "/Events/event" },
+          { name: "Profile", link: "/Auth/profile" },
+          { name: "Calendar", link: "/Calendar/calendar" },
         ]} 
       />
 
         <ImageCarousel images={tempImages}/>
 
-          <HeroTexts 
-            setNeonDark={setNeonDark}
-            neonDark={neonDark}
-            heading={"Professionally Designed by team Zucky the Lizard"}
-            para={text}
-          />
-
-          <div className='flex justify-center mt-10'>
-            <Button 
-              text="Explore more"
-              arrowType="minimal"
-              mode="dark"
+        <div className='lg:flex my-5 lg:my-10'>
+          <div className='lg:w-[50%]'>
+            <HeroTexts 
+              setNeonDark={setNeonDark}
+              neonDark={neonDark}
+              heading={"Empowering Communities, One Hour at a Time"}
+              para={text}
             />
+
+            <div className='flex justify-center mt-10'>
+              <Button 
+                text="Explore more"
+                arrowType="minimal"
+                mode="dark"
+              />
+            </div>
           </div>
 
-          <motion.div className='flex justify-center mt-20'
-            whileHover={{
-              scale: 1.5,
-            }}
+          <motion.div className='flex justify-center items-center mt-5 lg:mt-20 lg:w-[50%] w-full h-[500px] lg:h-auto'
           >
             <Image 
-              src={"https://media.sonos.com/images/znqtjj88/production/34735de0ce8535cb9fe2af5a78db26dcb4aaa9f1-2500x2500.png?w=750&q=100&fit=clip&auto=format"}
-              width={700}
-              height={700}
+              src={volunteer}
+              height={1100}
+              className='w-auto'
+              objectFit="cover" // This will make the image cover the container without distortion
+              alt="Volunteering Image"
             />
           </motion.div>
+        </div>
 
+          
             {/* gray textbox */}
           <div id="grayish-textarea" className="mb-24">
             <BackAndText 
@@ -106,10 +115,10 @@ const index = () => {
             {/* left img and right text or wise versa */}
           <div id="textimgcard" className='flex justify-center items-center mx-auto'>
             <TextImageCard 
-              head={"By Zucky the Lizard"}
-              title={"Lol"}
-              text={text}
-              imageUri={"https://media.sonos.com/images/znqtjj88/production/34735de0ce8535cb9fe2af5a78db26dcb4aaa9f1-2500x2500.png?w=750&q=100&fit=clip&auto=format"}
+              head={"Community Helper"}
+              title={"By Linda W."}
+              text={"As someone who isn’t very tech-savvy, I was worried I wouldn’t be able to navigate the platform. But Voluntrix is so intuitive! Now, I can easily sign up for events and track my contributions without any hassle"}
+              imageUri={vol1}
               buttonText={"Learn more"}
               direction={"right"}
               setNeonDark={setNeonDark}
@@ -119,10 +128,10 @@ const index = () => {
 
           <div id="textimgcard" className='flex justify-center items-center mx-auto'>
             <TextImageCard 
-              head={"By Zucky the Lizard"}
-              title={"Lol"}
-              text={text}
-              imageUri={"https://media.sonos.com/images/znqtjj88/production/34735de0ce8535cb9fe2af5a78db26dcb4aaa9f1-2500x2500.png?w=750&q=100&fit=clip&auto=format"}
+              head={"Youth Volunteer"}
+              title={"By Josh T"}
+              text={"Voluntrix not only connects me to volunteering opportunities, but it also connects me to other like-minded people who care about making a difference. The community aspect has been truly inspiring!"}
+              imageUri={vol2}
               buttonText={"Learn more"}
               direction={"left"}
               setNeonDark={setNeonDark}

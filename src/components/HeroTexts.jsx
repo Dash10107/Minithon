@@ -17,7 +17,7 @@ const AktivGroteskMedium = localFont({
 const HeroTexts = ({ heading, para, setNeonDark, neonDark }) => {
   return (
     <>
-        <motion.div id="container" className={` ${neonDark && "text-white"} mt-20 text-center flex flex-col justify-center items-center`}
+        <motion.div id="container" className={` ${neonDark && "text-white"} mt-20 text-start flex flex-col justify-center items-center`}
             initial={{ y: 100, opacity:0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -30,7 +30,7 @@ const HeroTexts = ({ heading, para, setNeonDark, neonDark }) => {
             id="hero-text" className={`text-4xl md:text-7xl w-[90%] md:w-[60%] font-bold ${AktivGroteskBold.variable}`}>
                 {heading}
             </motion.div>
-            <div id="hero-para" className={`z-10 mt-7 text-xs md:w-[30%] w-[80%] font-semibold ${neonDark ? "text-gray-300" : "text-heads"} ${AktivGroteskMedium.variable}`}>
+            <div id="hero-para" className={`z-10 mt-7 text-base md:w-[70%] w-[80%] font-semibold ${neonDark ? "text-gray-300" : "text-heads"} ${AktivGroteskMedium.variable}`}>
                 {para}
             </div>
         </motion.div>
