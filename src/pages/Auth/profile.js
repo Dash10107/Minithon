@@ -87,8 +87,38 @@ const profile = () => {
           </div>
 
           {/* Badge Section */}
-        <div className="mt-6 bg-white p-4 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold">Badges</h3>
+        <div className='md:flex gap-2'>
+          <div className="mt-6 bg-white p-4 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold">Badges</h3>
+              <div className="flex space-x-6 mt-4">
+                  {/* Example Badges */}
+                  <div className="flex flex-col items-center">
+                  {/* Circle Badge */}
+                  <div className="w-12 h-12 bg-blacks rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-2xl">🏆</span> {/* Optional Emoji/Icon */}
+                  </div>
+                  <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Top Volunteer</span>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                  {/* Diamond Badge */}
+                  <div className="w-12 h-12 bg-blacks transform rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-2xl">🌟</span> {/* Optional Emoji/Icon */}
+                  </div>
+                  <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Event Organizer</span>
+                  </div>
+
+                  <div className="flex flex-col items-center">
+                  {/* Square Badge */}
+                  <div className="w-12 h-12 bg-blacks flex rounded-full items-center justify-center">
+                      <span className="text-white font-bold text-2xl">🤝</span> {/* Optional Emoji/Icon */}
+                  </div>
+                  <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Community Helper</span>
+                  </div>
+              </div>
+          </div>
+          <div className="mt-6 bg-white p-4 rounded-lg shadow-md">
+            <h3 className="text-xl font-semibold">Achievement</h3>
             <div className="flex space-x-6 mt-4">
                 {/* Example Badges */}
                 <div className="flex flex-col items-center">
@@ -96,25 +126,11 @@ const profile = () => {
                 <div className="w-12 h-12 bg-blacks rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-2xl">🏆</span> {/* Optional Emoji/Icon */}
                 </div>
-                <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Top Volunteer</span>
-                </div>
-
-                <div className="flex flex-col items-center">
-                {/* Diamond Badge */}
-                <div className="w-12 h-12 bg-blacks transform rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-2xl">🌟</span> {/* Optional Emoji/Icon */}
-                </div>
-                <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Event Organizer</span>
-                </div>
-
-                <div className="flex flex-col items-center">
-                {/* Square Badge */}
-                <div className="w-12 h-12 bg-blacks flex rounded-full items-center justify-center">
-                    <span className="text-white font-bold text-2xl">🤝</span> {/* Optional Emoji/Icon */}
-                </div>
-                <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>Community Helper</span>
+                <span className={`mt-2 text-xs md:text-sm ${AktivGroteskBold.className}`}>50+ Hours Worked</span>
                 </div>
             </div>
+
+        </div>
         </div>
 
 

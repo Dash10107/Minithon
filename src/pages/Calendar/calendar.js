@@ -1,5 +1,7 @@
 import Header from '@/components/Header';
 import React, { useContext } from 'react';
+import 'add-to-calendar-button';
+
 import ThemeContext from '@/context/ThemeContext';
 import {
   Calendar,
@@ -28,7 +30,7 @@ const CalendarComponent = () => {
 
   const components = {
     event: (props) => {
-      const { title } = props;
+      const { title, start } = props;
 
       // Simple styling for the event text
       const eventStyle = {
@@ -44,8 +46,14 @@ const CalendarComponent = () => {
       };
 
       return (
-        <div style={eventStyle}>
-          {title}
+        <div style={eventStyle} className='flex flex-col h-[4rem]'>
+          <p>{title}</p>
+          <add-to-calendar-button
+              name={title}
+              startDate={moment(start).format('YYYY-MM-DD')}
+              options="['Google']"
+              timeZone="America/Los_Angeles"
+          />
         </div>
       );
     },

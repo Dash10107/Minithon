@@ -39,8 +39,8 @@ const login = () => {
     <>
         <div id="container" className={` ${neonDark && "bg-[#0d0d0d] text-white"} `}>
             <Header 
-                text1={"The winner for Minithon is"} 
-                text2={"Zucky the Lizard"} 
+                text1={"Join us for community park cleanup"} 
+                text2={"Shivaji Maidan - Sep 23"} 
                 linktext={"profiles"}
                 setNeonDark={setNeonDark}
                 neonDark={neonDark}
